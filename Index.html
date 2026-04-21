@@ -156,22 +156,26 @@ document.getElementById("contactForm").addEventListener("submit", function(e){
     e.preventDefault();
 
     fetch("https://formspree.io/f/mayvlrva", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            name: document.getElementById("name").value,
-            email: document.getElementById("email").value,
-            message: document.getElementById("message").value
-        })
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+    },
+    body: JSON.stringify({
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        message: document.getElementById("message").value
     })
-    .then(res => {
+})
+.then(res => {
+    if(res.ok){
         document.getElementById("formMsg").innerText = "Request Sent Successfully 🚀";
-    })
-    .catch(err => {
-        document.getElementById("formMsg").innerText = "Error ❌";
-    });
+    } else {
+        document.getElementById("formMsg").innerText = "Submission failed ❌";
+    }
+})
+.catch(err => {
+    document.getElementById("formMsg").innerText = "Error ❌";
 });
 </script></body>
 </html>
