@@ -1,0 +1,177 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galaxy Digital Systems</title><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet"><style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg,#0f172a,#020617);
+    color: white;
+}
+
+header {
+    text-align: center;
+    padding: 40px;
+}
+
+header h1 {
+    color: #38bdf8;
+    font-size: 2.5rem;
+}
+
+section {
+    padding: 50px;
+}
+
+.card {
+    background: rgba(255,255,255,0.05);
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+button {
+    background: #38bdf8;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: none;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #020617;
+}
+
+</style></head><body><header>
+    <h1>Galaxy Digital Systems</h1>
+    <p>Grow Smart, Grow Fast 🚀</p>
+</header><section>
+    <h2>❌ Problem</h2>
+    <div class="card">
+        Small businesses spend money on ads but don’t get results due to poor strategy, no funnel, and lack of proper system.
+    </div>
+</section><section>
+    <h2>✅ Our Solution</h2>
+    <div class="card">
+        We provide AI-powered digital marketing with proper funnel system, automation, and targeted ads to convert leads into customers.
+    </div>
+</section><section>
+    <h2>🎯 Who We Support</h2>
+    <div class="card">
+        <ul>
+            <li>Clothing Shops</li>
+            <li>Mobile Shops</li>
+            <li>Gyms</li>
+            <li>Coaching Classes</li>
+            <li>Local Businesses & Startups</li>
+        </ul>
+    </div>
+</section><section>
+    <h2>💼 Our Services</h2><div class="card">
+    <h3>AI Marketing</h3>
+    <p>We use advanced AI tools to analyze customer behavior and create smart marketing campaigns that target the right audience for better results.</p>
+</div>
+
+<div class="card">
+    <h3>Sales Funnel Creation</h3>
+    <p>We build high-converting sales funnels that guide your customers step-by-step from interest to final purchase.</p>
+</div>
+
+<div class="card">
+    <h3>Social Media Ads</h3>
+    <p>We create and manage Facebook & Instagram ads that attract local customers and generate quality leads.</p>
+</div>
+
+<div class="card">
+    <h3>Content Creation</h3>
+    <p>We design engaging posts, reels, and videos in local languages to connect emotionally with your audience.</p>
+</div>
+
+<div class="card">
+    <h3>WhatsApp Marketing</h3>
+    <p>We help you directly reach your customers using WhatsApp campaigns, voice notes, and personalized communication.</p>
+</div>
+
+</section><section>
+    <h2>📱 Social Media Marketing</h2><div class="card">
+    <h3>Marketing Through Social Media</h3>
+    <p>We help businesses grow using platforms like Instagram, Facebook, and WhatsApp by creating engaging content and targeted campaigns that attract the right audience.</p>
+</div>
+
+<div class="card">
+    <h3>Sales Generation</h3>
+    <p>Our strategies focus on converting followers into customers through ads, reels, storytelling, and direct engagement techniques.</p>
+</div>
+
+<div class="card">
+    <h3>Brand Growth</h3>
+    <p>We build strong brand presence with consistent posting, local language content, and emotional connection with audience.</p>
+</div>
+
+</section><section>
+    <h2>📊 Free Audit Plan</h2>
+    <div class="card">
+        <ul>
+            <li>Business Analysis & Current Performance Review</li>
+            <li>Social Media & Ad Strategy Check</li>
+            <li>Lead Generation Problem Identification</li>
+            <li>Custom Growth Strategy Suggestion</li>
+            <li>Free Consultation Call</li>
+        </ul>
+    </div>
+</section><section>
+    <h2>📩 Free Audit Form</h2>
+    <div class="card">
+        <form id="contactForm">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" placeholder="Tell us about your business" required></textarea>
+            <button type="submit">Get Free Audit</button>
+        </form>
+        <p id="formMsg"></p>
+    </div>
+</section><footer>
+    <p>📧 Email: galaxydigital@gmail.com</p>
+    <p>📞 Contact: +91 9123456780</p>
+    <p>© 2026 Galaxy Digital Systems</p>
+</footer><script>
+document.getElementById("contactForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    fetch("https://formspree.io/f/mayvlrva", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            message: document.getElementById("message").value
+        })
+    })
+    .then(res => {
+        document.getElementById("formMsg").innerText = "Request Sent Successfully 🚀";
+    })
+    .catch(err => {
+        document.getElementById("formMsg").innerText = "Error ❌";
+    });
+});
+</script></body>
+</html>
